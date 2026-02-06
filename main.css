@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+header{/*header chama todo o cabeçalho da página*/
+    background-color: #5f27cd;/*esta cor aqui é um exadecimal, quando o utilazamos estamos puchando 
+    uma cor que está aninhada na paleta e não pode ser chamado pelo nome*/
+    padding: 16 0;/*padding espaçamento entre os elementos e o primeior numero é para cima e para baixo e o segundo é para 
+    os lados*/
+    color: #fff; /*está é uma cor mais voltada para o cinza*/
+    display: flex;
+    border-bottom: 16px solid #341f97;  /*por meio deste atributo criamos uma borda inferior semelhante a uma linha
+    do tipo "solid" na cor especificada anteriormente*/
+    justify-content: center; /*Este atributo centralizou todo o nosso header*/
+    text-transform: uppercase;/*este atributo mudou o tipo de texto do nosso header, deixando as letras
+    nitidas*/
+    font-style: italic;/*coloca todo o nosso texto do header em italico*/
+}
+
+header button{/*Por meio desta classe chamamos o botão do cabeçalho*/
+    margin-left:16px;/*Este atributo regula o espaçamento do lado esquerdo do elemento da classe*/
+}
+form{/*form normalmente é por onde o usuario interage com nossa página e faz a entrada de dados*/
+    background-color: #c8d6e5;/*por meio deste atributo colocamos uma cor mais cinza como cor de fundo do nosso form*/
+    padding:24px 0;/*este atributo regula o espaçamento para as laterais e para cima e para baixo, sendo o primeiro atributo para cima e para baixo
+    e o segundo elemento para as laterais*/
+    text-align: center; /*Este atributo fez a centralização de todo o nosso texto*/
+    display: none;/*esta classe impede que o display referente ao formulario apareça, me permitindo escolher o momento em que quero que ele seja mostrado*/
+}
+
+form h2{/*REferisse ao titulo que está em h2("inserir nova imagem")*/
+    margin-bottom: 16px;/*por meio deste atributo colocamos uma margem inferior separando ele dos "inputs"*/
+}
+input, button{/*quando colocamos essas classe entre virgulas conseguimos chamar duas classes ou mais,
+    sendo que aqui, selecionamos os inputs e os botões*/
+    padding: 8px;/*por maio deste atributo criamos um espaçamento interno em todas as classes selecionadas afastando uma da outra*/
+}
+
+button{/*por meio deste atributo selecionamos o botão*/
+    background-color: #009432;/*este atributo seleciona todos os nossos botões*/
+    border:none;/*remove a borda dos botões*/
+    font-weight: bold;/*faz com que nosso texto fique em negrito*/
+    text-transform: uppercase;/*trasforma todo o texto em maiúsculo, o deixando esteticamente melhor*/
+    color: #fff;/*adiciona aquela cor que é mais proxima ao branco*/
+    cursor: pointer;/*cria uma mãozinha que toda vez que passamos com o mouse por cima de onde tem esse atributo transforma o cursor do mouse em uma maõzinha*/
+}
+#botao-cancelar{/*ids são chamados por meio de #*/
+    background-color: red;
+
+}
+ul{
+    display: flex;/*faz com que os elementos fiquem um ao lado do outro*/
+    flex-wrap: wrap;/*faz com que quando chegar ao de espaçamento da tela  limite-se criando uma nova linha*/
+}
+
+ul li{
+    max-width: 25%;/*largura máxima*/
+    list-style: none;/*remove a bolinha da foto*/
+    position:relative;/*É necessario que o elemento pai tenha o position relative pois o elemento filho tem o elemento absolute*/
+    max-height: 280px;/*por meio deste atributo fazemos com que os elementos dentro do li todos respeitem essa regra*/
+    overflow-y: hidden;/*o overflow com elemento filho hidden corta a foto caso ultrapasse o limite exigido e y se refere ao eixo vertical
+Foi por meio destes atributos que conseguimos fazer com que as três imagens fiquem alinhadas*/
+}
+ul li img {
+    width:100%;/*usamos este atributo para podermos corrigir as imagens as deixando menores*/
+}
+.overlay-imagem-link{
+    padding: 16px;/* este valor é o espaçamento interno do elemento*/
+    background-color: rgba(0,0,0,0.7);/*nesse grba o 0.7 quer dizer 70% de opacidade, ou seja 30% de transparência*/
+    position:absolute;/*permite colocar o elemento no canto inferior do nosso li e paa isso colocamos no cant inferior*/
+    bottom:0;/*significa que está na estremidade*/
+    left: 0;/**/
+    width: 100%;/*cep por cento de largura*/
+    opacity:0;/*isso que estamos fazendo é para que a barra onde esse link está fique escondida e no css, vamos decidir em qual 
+    momento queremos que ela apareça*/
+    transition: all ease .5s;/*.5s equivale a meio segundo*/
+}
+/*Mudando a cor do link da foto:*/
+.overlay-imagem-link a{
+    color:#fff;/*cor do texto, no caso do link*/
+    text-decoration: none;/*por meio deste removemos o anderline*/
+/*uma observação: sempre lembre de manter o código organizado, pois apenas uma vírgula fora do lugar
+já é o suficiente para impedir que o código funcione */
+}
+ul li:hover .overlay-imagem-link{
+    opacity: 1;
+}/*:hover é: "em atenção" ou quando o mouse está por cima dele e todo o texto deve ser organizado da forma correta, pois se apenas um espaçamento não for dado
+o código não funciona*/
+
