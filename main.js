@@ -39,7 +39,7 @@ $('#botao-cancelar').click(function(){
                 </a>
             </div>
         `).appendTo(novoItem);
-        $(novoItem).fadeIn(5000);
+        $(novoItem).fadeIn(2000);
         $(novoItem).appendTo('ul');
 })
 /*todo essa jogada que fizemos no js por meio do dquery é para podermos ter a opção
